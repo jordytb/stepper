@@ -10,9 +10,10 @@ It reads your comp's frame rate too, so 12fps holds look the same in a 24, 30 or
 
 ## Install
 
-1. In Cavalry, go to `Help > Show Scripts Folder`.
-2. Drop in `Stepper.js` and the `Stepper_assets` folder. Keep them together.
-3. Open `Window > Scripts > Stepper`.
+1. Go to `Code > Download ZIP`.
+2. In Cavalry, go to `Help > Show Scripts Folder`.
+3. Drop in `Stepper.js` and the `Stepper_assets` folder. Keep them together.
+4. Open `Window > Scripts > Stepper`.
 
 ## Use
 
