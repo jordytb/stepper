@@ -1,57 +1,41 @@
 # Stepper
 
-Posterize Time for Cavalry. Bake any eased animation into stop motion style holds, without losing your easing.
+Posterize Time for Cavalry. Turn any eased animation into stop motion style holds, and keep your easing.
 
-![Stepper logo](SteppedMotion_assets/StepperLogo.png)
+![Stepper logo](Stepper_assets/StepperLogo.png)
 
 ## What it does
 
-After Effects has Posterize Time. Cavalry doesn't, and scripts can't create Behaviours. Stepper gets you the same result a different way: it samples the curve between your selected keyframes and writes new Step (hold) keyframes at whatever frame rate you choose. Your original easing is baked into where each hold lands, so a slow-out still reads as a slow-out, just on 2s, 3s or 12s.
+Cavalry doesn't have a Posterize Time effect, so Stepper does it with keyframes. Select some keys, pick a frame rate, and Stepper samples the curve between them and writes Step (hold) keyframes at that rate. Your slow-in still reads as a slow-in, it's just on 2s now.
 
-Because the result is plain keyframes, you can still nudge, offset or delete individual holds afterwards.
+It reads your comp's frame rate too, so 12fps holds look the same in a 24, 30 or 60fps comp. When the rates don't divide evenly, holds alternate (2-3-2-3) exactly like AE.
 
 ## Install
 
-1. Open Cavalry and go to `Help > Show Scripts Folder`.
-2. Copy both `SteppedMotion.js` and the `SteppedMotion_assets` folder into it. The script loads its logo from that folder, so keep them together.
-3. Back in Cavalry, open `Window > Scripts > SteppedMotion`.
+1. In Cavalry, go to `Help > Show Scripts Folder`.
+2. Drop in `Stepper.js` and the `Stepper_assets` folder. Keep them together.
+3. Open `Window > Scripts > Stepper`.
 
-## Usage
+## Use
 
-1. Select two or more keyframes on any attribute in the Time Editor or Graph Editor. You can select keyframes across several attributes and layers at once.
-2. Set the **Step FPS** slider (1 to 30). 12 in a 24fps comp is animating on 2s.
-3. Click **Create Stepped Keyframes**.
+1. Select two or more keyframes on any attribute (multiple attributes and layers are fine).
+2. Set the **Step FPS** slider. 12 in a 24fps comp is animating on 2s.
+3. Hit **Create Stepped Keyframes**.
 
-The status line under the button tells you what happened. Undo (Cmd/Ctrl+Z) reverts a run.
+Not happy? Undo, tweak your curve, go again.
 
-## How the timing works
+## Good to know
 
-Stepper reads your composition's frame rate, so a 12fps step looks identical in a 24, 30 or 60fps comp. When the comp rate doesn't divide evenly by the step rate (say 10fps steps in a 24fps comp), hold lengths alternate 2-3-2-3, which is exactly what Posterize Time does.
-
-If you pick a Step FPS higher than the comp frame rate, Stepper warns you and does nothing.
-
-The first keyframe of each selected pair is switched to Step interpolation so the hold starts on your pose rather than easing into the first hold.
-
-## Limitations
-
-- Works on scalar and colour attributes. Path animation keyframes are skipped with a note in the console.
-- Once holds are baked, the original curve between those keys is replaced. Undo, tweak your easing, then run again.
-- Tested with the current Cavalry release. Older versions may lack some UI or keyframe API calls.
+- Works on numbers and colours. Path keyframes are skipped.
+- Picking a Step FPS higher than your comp rate does nothing except warn you.
+- The first key of each pair is switched to Step so the hold starts right on your pose.
 
 ## Roadmap
 
-- Step distribution control (ease the spacing of holds in or out for more animation principle flexibility).
-- Restore Easing button that removes baked holds and puts the original curve back, so you can iterate without undo.
-- Per session memory of the last Step FPS.
+Step distribution control for spacing holds in or out, a one-click Restore Easing button, and remembering your last Step FPS.
 
 ## Contributing
 
-Issues and pull requests welcome. If something breaks, please include your Cavalry version and anything printed in the JavaScript Console.
+Issues and PRs welcome. If something breaks, include your Cavalry version and anything from the JavaScript Console.
 
-## Credit
-
-Made by [Jordan Beaumont](https://YOUR-LINK-HERE).
-
-## License
-
-MIT. See [LICENSE](LICENSE).
+Made by [Jordan Beaumont](https://YOUR-LINK-HERE). MIT licensed, see [LICENSE](LICENSE).

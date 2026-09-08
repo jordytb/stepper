@@ -27,9 +27,9 @@
  - Undo (Cmd/Ctrl+Z) reverts the created keyframes.
 
  INSTALL
- Copy SteppedMotion.js AND the SteppedMotion_assets folder into
- your Cavalry Scripts folder (Help > Show Scripts Folder), then
- find it under Windows > Scripts > SteppedMotion.
+ Copy Stepper.js AND the Stepper_assets folder into your
+ Cavalry Scripts folder (Help > Show Scripts Folder), then
+ find it under Window > Scripts > Stepper.
 
 ================================================================
 */
@@ -47,7 +47,7 @@ var THEME = {
 	muted: "#9A9A9A"
 };
 
-var ASSETS = ui.scriptLocation + "/SteppedMotion_assets";
+var ASSETS = ui.scriptLocation + "/Stepper_assets";
 
 var FPS_MIN = 1;
 var FPS_MAX = 30;
